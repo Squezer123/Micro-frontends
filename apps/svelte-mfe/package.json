@@ -4,7 +4,7 @@
     "build": "concurrently npm:build:*",
     "build:rollup": "rollup -c",
     "start": "rollup -c -w",
-    "serve": "sirv dist -c",
+    "serve": "sirv dist -c --port 5000 --cors --single",
     "test": "jest",
     "prepare": "husky install",
     "format": "prettier --write --plugin-search-dir=. .",

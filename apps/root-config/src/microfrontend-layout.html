@@ -1,5 +1,40 @@
 <single-spa-router>
+  <nav class="main-nav">
+    <div class="nav-brand">KK Micro-frontends</div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/products">Products (React)</a>
+      <a href="/cart">Cart (Vue)</a>
+      <a href="/profile">Profile (Svelte)</a>
+    </div>
+  </nav>
+
   <main>
+    <route default>
+      <div class="home-page">
+        <h1>👋 Witaj w Micro-frontends</h1>
+        <p>
+          To jest strona główna <strong>root-config</strong>. Poniższe sekcje
+          są osobnymi mikrofrontendami, ładowanymi dynamicznie w zależności
+          od trasy:
+        </p>
+        <div class="home-cards">
+          <a href="/products" class="home-card">
+            <h2>🛍️ Products</h2>
+            <p>Zbudowane w React</p>
+          </a>
+          <a href="/cart" class="home-card">
+            <h2>🛒 Cart</h2>
+            <p>Zbudowane w Vue</p>
+          </a>
+          <a href="/profile" class="home-card">
+            <h2>👤 Profile</h2>
+            <p>Zbudowane w Svelte</p>
+          </a>
+        </div>
+      </div>
+    </route>
+
     <route path="products">
       <application name="@KK/React-micro"></application>
     </route>
@@ -10,4 +45,89 @@
       <application name="@KK/svelte-mfe"></application>
     </route>
   </main>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #fafafa;
+    }
+  
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 32px;
+      background: #1a1a1a;
+      color: white;
+    }
+  
+    .nav-brand {
+      font-weight: 600;
+      font-size: 18px;
+    }
+  
+    .nav-links a {
+      color: #ddd;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 14px;
+    }
+  
+    .nav-links a:hover {
+      color: white;
+    }
+  
+    .home-page {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 24px;
+      text-align: center;
+    }
+  
+    .home-page h1 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+  
+    .home-page p {
+      color: #555;
+      line-height: 1.6;
+    }
+  
+    .home-cards {
+      display: flex;
+      gap: 16px;
+      margin-top: 32px;
+      justify-content: center;
+    }
+  
+    .home-card {
+      flex: 1;
+      max-width: 220px;
+      padding: 24px;
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #1a1a1a;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: transform 0.15s ease;
+    }
+  
+    .home-card:hover {
+      transform: translateY(-4px);
+    }
+  
+    .home-card h2 {
+      font-size: 18px;
+      margin: 0 0 8px;
+    }
+  
+    .home-card p {
+      color: #777;
+      font-size: 14px;
+      margin: 0;
+    }
+  </style>
 </single-spa-router>
+

@@ -10,39 +10,27 @@ export default {
   input: "src/KK-svelte-micro.js",
   output: {
     sourcemap: true,
-    format: "system",
-    name: null, // ensure anonymous System.register
-    file: "dist/KK-svelte-micro.js",
+    format: "es",
+    name: null,
+    file: "dist/KK-svelte-mfe.js",
   },
+  external: ["svelte", "svelte/internal"],
   plugins: [
     svelte({
-      // enable run-time checks when not in production
       dev: !production,
-
       emitCss: false,
     }),
 
-    // If you have external dependencies installed from
-    // npm, you'll most likely need these plugins. In
-    // some cases you'll need additional configuration -
-    // consult the documentation for details:
-    // https://github.com/rollup/plugins/tree/master/packages/commonjs
     resolve({
       browser: true,
       dedupe: ["svelte"],
     }),
     commonjs(),
 
-    // In dev mode, call `npm run start` once
-    // the bundle has been generated
     !production && serve(),
 
-    // Watch the `dist` directory and refresh the
-    // browser on changes when not in production
     !production && livereload("dist"),
 
-    // If we're building for production (npm run build
-    // instead of npm run dev), minify
     production && terser(),
   ],
   watch: {
@@ -58,10 +46,14 @@ function serve() {
       if (!started) {
         started = true;
 
-        require("child_process").spawn("npm", ["run", "serve", "--", "--dev"], {
-          stdio: ["ignore", "inherit", "inherit"],
-          shell: true,
-        });
+        require("child_process").spawn(
+          "npm",
+          ["run", "serve", "--", "--dev"],
+          {
+            stdio: ["ignore", "inherit", "inherit"],
+            shell: true,
+          }
+        );
       }
     },
   };
