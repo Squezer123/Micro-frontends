@@ -16,8 +16,8 @@ const applications = constructApplications({
 const layoutEngine = constructLayoutEngine({ routes, applications });
 
 registerApplication({
-  name: "@KK/react-mfe",
-  app: () => System.import("@KK/react-mfe"),
+  name: "@KK/React-micro",
+  app: () => import("@KK/React-micro"),
   activeWhen: ["/products"],
 });
 

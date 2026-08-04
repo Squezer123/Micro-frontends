@@ -1,0 +1,60 @@
+# Dependencies
+node_modules/
+apps/**/node_modules/
+.pnp/
+.pnp.js
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# Build output
+dist/
+build/
+apps/**/dist/
+apps/**/build/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+apps/**/.env
+apps/**/.env.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+
+# Editor / IDE
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# Testing / coverage
+coverage/
+apps/**/coverage/
+.nyc_output/
+
+# Cache
+.cache/
+.eslintcache
+.parcel-cache/
+.webpack-cache/
+
+# TypeScript
+*.tsbuildinfo
+
+# Misc OS files
+Thumbs.db
+.DS_Store
+
+# Local overrides
+*.local.js

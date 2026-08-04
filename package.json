@@ -1,0 +1,22 @@
+{
+  "name": "micro-frontends",
+  "private": true,
+  "workspaces": ["apps/*"],
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Squezer123/Micro-frontends.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Squezer123/Micro-frontends/issues"
+  },
+  "homepage": "https://github.com/Squezer123/Micro-frontends#readme"
+}
