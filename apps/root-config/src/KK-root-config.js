@@ -15,24 +15,6 @@ const applications = constructApplications({
 });
 const layoutEngine = constructLayoutEngine({ routes, applications });
 
-registerApplication({
-  name: "@KK/React-micro",
-  app: () => import("@KK/React-micro"),
-  activeWhen: ["/products"],
-});
-
-registerApplication({
-  name: "@KK/vue-mfe",
-  app: () => System.import("@KK/vue-mfe"),
-  activeWhen: ["/cart"],
-});
-
-registerApplication({
-  name: "@KK/svelte-mfe",
-  app: () => System.import("@KK/svelte-mfe"),
-  activeWhen: ["/profile"],
-});
-
 applications.forEach(registerApplication);
 layoutEngine.activate();
 start();

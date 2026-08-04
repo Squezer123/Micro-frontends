@@ -1,25 +1,13 @@
 <single-spa-router>
-  <!--
-
-    This is the single-spa Layout Definition for your microfrontends.
-    See https://single-spa.js.org/docs/layout-definition/ for more information.
-
-  -->
-
-  <!-- Example layouts you might find helpful:
-
-  <nav>
-    <application name="@org/navbar"></application>
-  </nav>
-  <route path="settings">
-    <application name="@org/settings"></application>
-  </route>
-
-  -->
-
   <main>
-    <route default>
-      <application name="@single-spa/welcome"></application>
+    <route path="products">
+      <application name="@KK/React-micro"></application>
+    </route>
+    <route path="cart">
+      <application name="@KK/vue-mfe"></application>
+    </route>
+    <route path="profile">
+      <application name="@KK/svelte-mfe"></application>
     </route>
   </main>
 </single-spa-router>

@@ -25,16 +25,20 @@
   <!-- <script type="injector-importmap" src="/importmap.json"></script> -->
 
   <% if (isLocal) { %>
-  <script type="injector-importmap">
-    {
-      "imports": {
-        "react": "https://cdn.jsdelivr.net/npm/react@18/umd/react.production.min.js",
-        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.production.min.js"
-        "@KK/root-config": "//localhost:9000/KK-root-config.js",
-        "@KK/React-micro": "//localhost:8080/KK-react-micro.js"
+    <script type="injector-importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@19.2.8",
+          "react/jsx-runtime": "https://esm.sh/react@19.2.8/jsx-runtime",
+          "react-dom": "https://esm.sh/react-dom@19.2.8?external=react",
+          "react-dom/client": "https://esm.sh/react-dom@19.2.8/client?external=react,react-dom",
+          "scheduler": "https://esm.sh/scheduler@0.27.0?external=react",
+          "@KK/root-config": "//localhost:9000/KK-root-config.js",
+          "@KK/React-micro": "//localhost:8080/KK-react-micro.js"
+        }
       }
-    }
-  </script>
+    </script>
+    
   <% } %>
 
   <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@5.1.1/dist/import-map-overrides.js"></script>
