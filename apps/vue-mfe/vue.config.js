@@ -20,6 +20,7 @@ module.exports = defineConfig({
     },
     externals: {
       vue: "vue",
+      "@KK/cart-store": "@KK/cart-store",
     },
     externalsType: "module",
   },
@@ -36,5 +37,6 @@ module.exports = defineConfig({
     client: false,
     hot: false,
     liveReload: false,
+    webSocketServer: false,
   },
 });

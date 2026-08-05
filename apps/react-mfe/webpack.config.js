@@ -17,6 +17,7 @@ module.exports = (webpackConfigEnv, argv) => {
       "react-dom/client",
       "react/jsx-runtime",
       "scheduler",
+      "@KK/cart-store",
     ],
   });
 };
